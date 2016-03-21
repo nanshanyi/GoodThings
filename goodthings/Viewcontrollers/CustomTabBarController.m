@@ -52,7 +52,7 @@
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
 //    effectView.backgroundColor = [UIColor whiteColor];
     
-//    effectView.contentView.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1.0];
+    effectView.contentView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
     //使用UIImageView充当我们的背景
     self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, kScreenHeight-49, kScreenWidth, 49)];
     effectView.frame = self.imageView.bounds;

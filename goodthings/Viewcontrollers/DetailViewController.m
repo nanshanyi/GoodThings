@@ -31,7 +31,8 @@ int a = 0;
     [[NetEngine sharedInstance] requestNewsListFrom:_dataUrl success:^(id responsData) {
         NSString *str = responsData[@"data"][@"content"];
         self.giftDetailUrl = str;
-        self.introduction = responsData[@"data"][@"title"];
+        self.introduction = responsData[@"data"][@"introduction"];
+        self.title = responsData[@"data"][@"title"];
         [self webViewAddHeadViewWithType:1];
        [self.webView loadHTMLString:self.giftDetailUrl baseURL:nil];
     } falied:^(NSError *error) {
@@ -46,7 +47,7 @@ int a = 0;
         [self webViewAddHeadViewWithType:0];
     }else if (self.giftDetailUrl){
         [self webViewAddHeadViewWithType:1];
-        [self.webView loadHTMLString:self.giftDetailUrl baseURL:nil];
+//        [self.webView loadHTMLString:self.giftDetailUrl baseURL:nil];
     }
  
     
@@ -87,9 +88,9 @@ int a = 0;
     if ([url rangeOfString:@"content"].length > 0) {
         return YES;
     }else if([url containsString:@"skipCon"]&&(url.length > 9)){
-        NSArray * array = [url componentsSeparatedByString:@":"];
+        NSArray * array = [url componentsSeparatedByString:@"skipCon/:"];
         NSString *str =[array lastObject];
-        NSString *articleId = [str substringWithRange:NSMakeRange(4, 9)];
+        NSString *articleId = [str substringWithRange:NSMakeRange(4, str.length-6)];
         DetailViewController *viewController = [[DetailViewController alloc]init];
         viewController.detailUrl = [NSString stringWithFormat:kArticleDetailUrl,articleId];
         [self.navigationController pushViewController:viewController animated:YES];

@@ -152,7 +152,6 @@
     NSString *str = [NSString stringWithFormat:kDetailUrl,model.id];
     DetailViewController *detailVC = [[DetailViewController alloc]init];
     detailVC.dataUrl = str;
-    detailVC.titlestr = @"品质";
     detailVC.imageUrl = model.guide_image[@"url"];
     [self.navigationController pushViewController:detailVC animated:YES];
     [self hiddenTabBar];

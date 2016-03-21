@@ -76,12 +76,15 @@
     CGFloat offsetY = scrollView.contentOffset.y;
     self.navigationController.navigationBar.alpha = offsetY <= 0 ? 0:offsetY/250.0;
 }
-- (void)viewWillAppear:(BOOL)animated{
-    self.navigationController.navigationBar.translucent = YES;
-}
 - (void)viewDidAppear:(BOOL)animated{
-    self.navigationController.navigationBar.alpha = 0.0;
+//    self.navigationController.navigationBar.translucent = YES;
+    [UIView animateWithDuration:0.5 animations:^{
+        self.navigationController.navigationBar.alpha = 0.0;
+    }];
 }
+//- (void)viewDidAppear:(BOOL)animated{
+//    self.navigationController.navigationBar.alpha = 0.0;
+//}
 - (void)viewWillDisappear:(BOOL)animated{
     self.navigationController.navigationBar.alpha = 1.0;
 }

@@ -25,13 +25,13 @@
                   symbolName = "-[MusicFormerViewController fetchDataFromNet]"
                   moduleName = "goodthings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a513751209/Desktop/lgh/%E6%9C%89%E7%94%A8%E7%9A%84%E5%B0%8F%E5%BA%93/goodthings/goodthings/Viewcontrollers/MusicFormerViewController.m"
-                  timestampString = "479988476.955527"
+                  urlString = "file:///Users/a513751209/Desktop/gitGoofYhing/GoodThings/GoodThings/goodthings/Viewcontrollers/MusicFormerViewController.m"
+                  timestampString = "480235794.696009"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
                   endingLineNumber = "97"
-                  offsetFromSymbolStart = "76">
+                  offsetFromSymbolStart = "252">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -40,8 +40,53 @@
                   symbolName = "__45-[MusicFormerViewController fetchDataFromNet]_block_invoke"
                   moduleName = "goodthings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a513751209/Desktop/lgh/%E6%9C%89%E7%94%A8%E7%9A%84%E5%B0%8F%E5%BA%93/goodthings/goodthings/Viewcontrollers/MusicFormerViewController.m"
-                  timestampString = "479988476.955936"
+                  urlString = "file:///Users/a513751209/Desktop/gitGoofYhing/GoodThings/GoodThings/goodthings/Viewcontrollers/MusicFormerViewController.m"
+                  timestampString = "480235794.697177"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "97"
+                  endingLineNumber = "97"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_"
+                  moduleName = "goodthings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a513751209/Desktop/gitGoofYhing/GoodThings/GoodThings/goodthings/Viewcontrollers/MusicFormerViewController.m"
+                  timestampString = "480235794.698236"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_"
+                  moduleName = "goodthings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a513751209/Desktop/gitGoofYhing/GoodThings/GoodThings/goodthings/Viewcontrollers/MusicFormerViewController.m"
+                  timestampString = "480235794.699385"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__45-[MusicFormerViewController fetchDataFromNet]_block_invoke119"
+                  moduleName = "goodthings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a513751209/Desktop/gitGoofYhing/GoodThings/GoodThings/goodthings/Viewcontrollers/MusicFormerViewController.m"
+                  timestampString = "480235794.700281"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "97"
@@ -73,8 +118,8 @@
                   symbolName = "-[MagazineViewController fetchDataFromNet]"
                   moduleName = "goodthings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a513751209/Desktop/lgh/%E6%9C%89%E7%94%A8%E7%9A%84%E5%B0%8F%E5%BA%93/goodthings/goodthings/Viewcontrollers/MagazineViewController.m"
-                  timestampString = "479988476.983208"
+                  urlString = "file:///Users/a513751209/Desktop/gitGoofYhing/GoodThings/GoodThings/goodthings/Viewcontrollers/MagazineViewController.m"
+                  timestampString = "480235794.72313"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "57"
@@ -88,8 +133,8 @@
                   symbolName = "__42-[MagazineViewController fetchDataFromNet]_block_invoke"
                   moduleName = "goodthings"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/a513751209/Desktop/lgh/%E6%9C%89%E7%94%A8%E7%9A%84%E5%B0%8F%E5%BA%93/goodthings/goodthings/Viewcontrollers/MagazineViewController.m"
-                  timestampString = "479988476.98356"
+                  urlString = "file:///Users/a513751209/Desktop/gitGoofYhing/GoodThings/GoodThings/goodthings/Viewcontrollers/MagazineViewController.m"
+                  timestampString = "480235794.723535"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "57"
@@ -223,7 +268,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
             endingLineNumber = "67"
-            landmarkName = "-fetchDataFromNet"
+            landmarkName = "-fetchDataFromLocal"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -255,7 +300,86 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
             endingLineNumber = "78"
-            landmarkName = "-parserData:"
+            landmarkName = "-fetchDataFromNet"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[GoodGiftViewController fetchDataFromNet]_block_invoke82"
+                  moduleName = "goodthings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a513751209/Desktop/gitGoofYhing/GoodThings/GoodThings/goodthings/Viewcontrollers/GoodGiftViewController.m"
+                  timestampString = "480235794.759306"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_83"
+                  moduleName = "goodthings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a513751209/Desktop/gitGoofYhing/GoodThings/GoodThings/goodthings/Viewcontrollers/GoodGiftViewController.m"
+                  timestampString = "480235794.760173"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_84"
+                  moduleName = "goodthings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/a513751209/Desktop/gitGoofYhing/GoodThings/GoodThings/goodthings/Viewcontrollers/GoodGiftViewController.m"
+                  timestampString = "480235794.760572"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "goodthings/Viewcontrollers/DetailViewController.m"
+            timestampString = "480236024.754674"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "goodthings/Viewcontrollers/BaseCollectionViewController.m"
+            timestampString = "480236617.676033"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-fetchDataFromNet"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -266,11 +390,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "goodthings/Unitity/NetEngine/NetEngine.m"
-            timestampString = "479985659.251407"
+            timestampString = "480229476.372255"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "-GET2:success:falied:"
             landmarkType = "5">
          </BreakpointContent>
@@ -282,7 +406,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "goodthings/Unitity/NetEngine/NetEngine.m"
-            timestampString = "479985669.038516"
+            timestampString = "480230105.360848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -297,13 +421,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "goodthings/Viewcontrollers/DetailViewController.m"
-            timestampString = "479988476.873648"
+            filePath = "goodthings/Unitity/NetEngine/NetEngine.m"
+            timestampString = "480230109.30974"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "-creatWebView"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "-GET2:success:falied:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -314,12 +438,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "goodthings/Viewcontrollers/DetailViewController.m"
-            timestampString = "479988476.873648"
+            timestampString = "480236024.754674"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-creatWebView"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -330,28 +454,108 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "goodthings/Viewcontrollers/DetailViewController.m"
-            timestampString = "479988476.873648"
+            timestampString = "480232903.036699"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-creatWebView"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "goodthings/Viewcontrollers/DetailViewController.m"
-            timestampString = "479988476.873648"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "-fetchData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "goodthings/Viewcontrollers/BaseCollectionViewController.m"
+            timestampString = "480236617.676033"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "-previewingContext:viewControllerForLocation:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "goodthings/Viewcontrollers/DetailViewController.m"
+            timestampString = "480236024.754674"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "goodthings/Viewcontrollers/DetailViewController.m"
+            timestampString = "480236024.754674"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "goodthings/Viewcontrollers/DetailViewController.m"
+            timestampString = "480236024.754674"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "goodthings/Viewcontrollers/DetailViewController.m"
+            timestampString = "480236024.754674"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-creatWebView"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "goodthings/Viewcontrollers/DetailViewController.m"
+            timestampString = "480236024.754674"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "-creatWebView"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
