@@ -52,13 +52,13 @@
     UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
 //    effectView.backgroundColor = [UIColor whiteColor];
     
-    effectView.contentView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.5];
+    effectView.contentView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
     //使用UIImageView充当我们的背景
     self.imageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, kScreenHeight-49, kScreenWidth, 49)];
     effectView.frame = self.imageView.bounds;
     [self.imageView addSubview:effectView];
     //backgroundView.image = [UIImage imageNamed:@"tab_black_bg@2x.png"];
-    self.imageView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
+    self.imageView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.6];
     self.imageView.userInteractionEnabled = YES;
     [self.view addSubview:self.imageView];
     self.slideView = [[UIView alloc]initWithFrame:CGRectMake(0, 49-2, kScreenWidth/3.0, 2)];

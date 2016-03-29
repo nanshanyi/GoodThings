@@ -23,7 +23,6 @@
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
 }
 - (void)cusromNavBar{
-    self.navigationController.navigationBar.translucent = NO;
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 44, 44);
   [button setImageEdgeInsets:UIEdgeInsetsMake(11, 0, 11, 20)];

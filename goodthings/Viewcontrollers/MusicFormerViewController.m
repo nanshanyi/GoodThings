@@ -23,8 +23,7 @@
     [super viewDidLoad];
     self.pages = 1;
     self.title = @"往期音乐";
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.navigationController.navigationBar.translucent = NO;
+
     [self customNavbar];
     [self creatTableView];
     [self addRefreshView];
@@ -33,9 +32,7 @@
     
     // Do any additional setup after loading the view.
 }
-- (void)viewWillAppear:(BOOL)animated{
-    self.navigationController.navigationBar.translucent = NO;
-}
+
 - (void)customNavbar{
     self.view.backgroundColor = [UIColor whiteColor];
     UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -59,7 +56,7 @@
     [self presentViewController:[MusicPlayerViewController shareInstance] animated:YES completion:nil];
 }
 - (void)creatTableView{
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

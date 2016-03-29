@@ -39,8 +39,8 @@
     [self fetchData];
     [self addRefreshView];
     self.title = @"好听";
-    self.contentScrollView.contentSize = CGSizeMake(kScreenWidth, kScreenHeight-64);
-    
+    self.contentScrollView.contentSize = CGSizeMake(kScreenWidth, kScreenHeight);
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     // Do any additional setup after loading the view from its nib.
 }
 - (void)addRefreshView{

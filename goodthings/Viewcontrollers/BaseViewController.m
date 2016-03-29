@@ -18,9 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self customNavbar];
-     self.navigationController.interactivePopGestureRecognizer.delegate = self;
      self.view.backgroundColor = [UIColor whiteColor];
-   
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = self;
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    }
     // Do any additional setup after loading the view.
 }
 - (void)customNavbar{
@@ -50,7 +52,7 @@
     }];
 }
 - (void)viewWillAppear:(BOOL)animated{
-     self.navigationController.navigationBar.translucent = NO;
+//     self.navigationController.navigationBar.translucent = NO;
 }
 - (void)viewDidAppear:(BOOL)animated{
     

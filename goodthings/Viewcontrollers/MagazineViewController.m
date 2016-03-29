@@ -39,7 +39,7 @@
     self.isplayingSection = 100;
     self.isPlaying = NO;
     self.isOpenArray = [NSMutableArray array];
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) style:UITableViewStyleGrouped];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStyleGrouped];
     self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -47,7 +47,7 @@
     [self.view addSubview:self.tableView];
 }
 - (void)registCell{
-    self.tableView.separatorInset = UIEdgeInsetsMake(0, 80, 0, 0);
+//    self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     [self.tableView registerNib:[UINib nibWithNibName:@"MagazineTableViewCell" bundle:nil] forCellReuseIdentifier:MagazineTableViewCellId];
     [self.tableView registerNib:[UINib nibWithNibName:@"MagazineFirstTableViewCell" bundle:nil] forCellReuseIdentifier:MagazineFirstTableViewCellId];
  

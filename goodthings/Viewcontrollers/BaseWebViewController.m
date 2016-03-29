@@ -8,7 +8,7 @@
 
 #import "BaseWebViewController.h"
 
-@interface BaseWebViewController ()
+@interface BaseWebViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.navigationController.navigationBar.alpha = 0.0;
     [self addWebView];
     [self creatNavgationBar];
     [self addLoadingView];
@@ -30,8 +29,11 @@
     [self.view addSubview:self.webView];
 }
 - (void)creatNavgationBar{
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.navigationController.navigationBar.translucent = YES;
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.delegate = self;
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    }
+    self.automaticallyAdjustsScrollViewInsets = NO;   
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     button.frame = CGRectMake(0, 0, 44, 44);
     [button setImageEdgeInsets:UIEdgeInsetsMake(11, 0, 11, 20)];
@@ -46,19 +48,19 @@
     [rithtButton addTarget:self action:@selector(musicPlayer) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rithtButton];
     
-    UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftbutton.frame = CGRectMake(20, 20, 44, 44);
-    [leftbutton setImageEdgeInsets:UIEdgeInsetsMake(11, 0, 11, 20)];
-    [leftbutton setImage:[UIImage imageNamed:@"iconfont-chevronleftgreen"] forState:UIControlStateNormal];
-    [leftbutton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:leftbutton];
-    
-    UIButton *rithtButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
-    rithtButton1.frame = CGRectMake(kScreenWidth-44-20 ,20, 44, 44);
-    [rithtButton1 setImageEdgeInsets:UIEdgeInsetsMake(11,20, 11, 0)];
-    [rithtButton1 setImage:[UIImage imageNamed:@"iconfont-vynilGreen"] forState:UIControlStateNormal];
-    [rithtButton1 addTarget:self action:@selector(musicPlayer) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:rithtButton1];
+//    UIButton *leftbutton = [UIButton buttonWithType:UIButtonTypeCustom];
+//    leftbutton.frame = CGRectMake(20, 20, 44, 44);
+//    [leftbutton setImageEdgeInsets:UIEdgeInsetsMake(11, 0, 11, 20)];
+//    [leftbutton setImage:[UIImage imageNamed:@"iconfont-chevronleftgreen"] forState:UIControlStateNormal];
+//    [leftbutton addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:leftbutton];
+//    
+//    UIButton *rithtButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
+//    rithtButton1.frame = CGRectMake(kScreenWidth-44-20 ,20, 44, 44);
+//    [rithtButton1 setImageEdgeInsets:UIEdgeInsetsMake(11,20, 11, 0)];
+//    [rithtButton1 setImage:[UIImage imageNamed:@"iconfont-vynilGreen"] forState:UIControlStateNormal];
+//    [rithtButton1 addTarget:self action:@selector(musicPlayer) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:rithtButton1];
 }
 - (void)addLoadingView{
     
@@ -74,19 +76,20 @@
 }
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     CGFloat offsetY = scrollView.contentOffset.y;
-    self.navigationController.navigationBar.alpha = offsetY <= 0 ? 0:offsetY/250.0;
+    [[self.navigationController.navigationBar subviews] objectAtIndex:0].alpha = offsetY <= 0 ? 0:offsetY/250.0;
+//    self.navigationController.navigationBar.alpha =
 }
 - (void)viewDidAppear:(BOOL)animated{
-//    self.navigationController.navigationBar.translucent = YES;
-    [UIView animateWithDuration:0.5 animations:^{
-        self.navigationController.navigationBar.alpha = 0.0;
-    }];
+    if (self.webView.scrollView.contentOffset.y < 250) {
+        [UIView animateWithDuration:0.5 animations:^{
+            [[self.navigationController.navigationBar subviews] objectAtIndex:0].alpha = 0.0;
+        }];
+    }
+
 }
-//- (void)viewDidAppear:(BOOL)animated{
-//    self.navigationController.navigationBar.alpha = 0.0;
-//}
+
 - (void)viewWillDisappear:(BOOL)animated{
-    self.navigationController.navigationBar.alpha = 1.0;
+ [[self.navigationController.navigationBar subviews] objectAtIndex:0].alpha = 1.0;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

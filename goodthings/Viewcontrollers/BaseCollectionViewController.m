@@ -13,7 +13,7 @@
 #import "CustomTabBarController.h"
 #import "DetailViewController.h"
 
-@interface BaseCollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIViewControllerPreviewingDelegate>
+@interface BaseCollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UICollectionViewDelegateFlowLayout,UIViewControllerPreviewingDelegate>
 
 @property (nonatomic)UICollectionView *collectionView;
 @property (nonatomic)NSInteger pages;
@@ -39,16 +39,17 @@
     [self fetchData];
     
 }
+
 - (void)creatCollectionView{
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     flowLayout.minimumLineSpacing = 15;
     flowLayout.minimumInteritemSpacing = 15;
     flowLayout.sectionInset = UIEdgeInsetsMake(15, 15, 15, 15);
     flowLayout.itemSize = CGSizeMake(kItemWidth, kItemHeight);
-   // flowLayout.sectionInset = UIEdgeInsetsMake(15, 15, 15, 15);
-    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-64) collectionViewLayout:flowLayout];
+    self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) collectionViewLayout:flowLayout];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.collectionView.contentInset= UIEdgeInsetsMake(64, 0, 59, 0);
     self.collectionView.backgroundColor = kLightGrayColor;
     UINib *nib = [UINib nibWithNibName:@"BeautifulCollectionViewCell" bundle:nil];
     [self.collectionView registerNib:nib forCellWithReuseIdentifier:ItemId];
@@ -89,16 +90,7 @@
         [self.loadingView removeLoadingView];
                 [self endRefreshing];
     }];
-//    [[NetEngine sharedInstance] requestDataFrom:url sucess:^(id responsData) {
-//        [self parserData:responsData];
-//        [GoodThingsCacheManager saveData:responsData atUrl:url];
-//        [self.loadingView removeLoadingView];
-////        [self.collectionView reloadData];
-//        [self endRefreshing];
-//    } falied:^(NSError *error) {
-//        [self.loadingView removeLoadingView];
-//        [self endRefreshing];
-//    }];
+
 }
 - (void)parserData:(id)responsData{
     if (self.pages == 1) {

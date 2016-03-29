@@ -28,16 +28,15 @@
     [super viewDidLoad];
     self.title = @"好物";
     self.page = 0;
-    self.automaticallyAdjustsScrollViewInsets = NO;
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     [self creatTableView];
     [self addRefreshView];
     [self addLoadingView];
     [self fetchData];
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     // Do any additional setup after loading the view.
 }
 - (void)creatTableView{
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-49)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 //    UINib *nib = [UINib nibWithNibName:@"GiftTableViewCell" bundle:nil];

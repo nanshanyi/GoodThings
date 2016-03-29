@@ -542,6 +542,8 @@
 			children = (
 				BC5040B51BCE8CB800CFC451 /* BaseViewController.h */,
 				BC5040B61BCE8CB800CFC451 /* BaseViewController.m */,
+				FBF7EC1C1C9C4DAD006177B5 /* BaseWebViewController.h */,
+				FBF7EC1D1C9C4DAD006177B5 /* BaseWebViewController.m */,
 			);
 			name = "基类";
 			sourceTree = "<group>";
@@ -893,8 +895,6 @@
 				BCBBF5FA1BCCE9CB002B135E /* DetailViewController.h */,
 				BCBBF5FB1BCCE9CB002B135E /* DetailViewController.m */,
 				BC5040911BCE326800CFC451 /* 音乐详情页 */,
-				FBF7EC1C1C9C4DAD006177B5 /* BaseWebViewController.h */,
-				FBF7EC1D1C9C4DAD006177B5 /* BaseWebViewController.m */,
 			);
 			name = "详情页面";
 			sourceTree = "<group>";
@@ -975,7 +975,7 @@
 				TargetAttributes = {
 					BCBBF4FE1BCBB0FD002B135E = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 44YCQRLTQE;
+						DevelopmentTeam = R3C2Y7VA37;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1348,7 +1348,7 @@
 				INFOPLIST_FILE = goodthings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.musicl.lee;
+				PRODUCT_BUNDLE_IDENTIFIER = com.music.llee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1368,7 +1368,7 @@
 				INFOPLIST_FILE = goodthings/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.musicl.lee;
+				PRODUCT_BUNDLE_IDENTIFIER = com.music.llee;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;

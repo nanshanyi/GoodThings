@@ -29,8 +29,14 @@ NSString *const kCachedVCName = @"kCachedVCName";
     [self creatPageControl];
     self.title = @"最新";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     // Do any additional setup after loading the view.
+}
+- (void)viewDidAppear:(BOOL)animated{
+    self.pageControl.hidden = NO;
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    self.pageControl.hidden = YES;
 }
 - (void)initData{
     self.dataSourceArray  = [NSMutableArray array];
@@ -42,9 +48,11 @@ NSString *const kCachedVCName = @"kCachedVCName";
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc]init];
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
-    layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight-74);
+//    layout.sectionInset = UIEdgeInsetsMake(64, 0, 0, 0);
+    layout.itemSize = CGSizeMake(kScreenWidth, kScreenHeight);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.contentCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight-74) collectionViewLayout:layout];
+    self.contentCollectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) collectionViewLayout:layout];
+//    self.contentCollectionView.contentOffset = CGPointMake(0, -64);
     self.contentCollectionView.showsHorizontalScrollIndicator = NO;
     self.contentCollectionView.pagingEnabled = YES;
     self.contentCollectionView.dataSource = self;
@@ -56,12 +64,12 @@ NSString *const kCachedVCName = @"kCachedVCName";
     [self.view addSubview:self.contentCollectionView];
 }
 - (void)creatPageControl{
-    self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0,0, kScreenWidth, 10)];
-    self.pageControl.backgroundColor = kLightGrayColor;
+    self.pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0,35, kScreenWidth, 5)];
+//    self.pageControl.backgroundColor = kLightGrayColor;
     self.pageControl.numberOfPages = self.titleArray.count;
     self.pageControl.pageIndicatorTintColor = [UIColor lightGrayColor];
     self.pageControl.currentPageIndicatorTintColor = kDarkGreenColor ;
-    [self.view addSubview:self.pageControl];
+    [self.navigationController.navigationBar addSubview:self.pageControl];
 }
 #pragma mark -
 #pragma mark UICollectionViewDelegate
