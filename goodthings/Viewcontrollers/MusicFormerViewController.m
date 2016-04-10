@@ -23,7 +23,8 @@
     [super viewDidLoad];
     self.pages = 1;
     self.title = @"往期音乐";
-
+    self.navigationController.interactivePopGestureRecognizer.delegate =self;
+    self.navigationController.interactivePopGestureRecognizer.enabled = YES;
     [self customNavbar];
     [self creatTableView];
     [self addRefreshView];

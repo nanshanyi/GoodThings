@@ -11,7 +11,8 @@
 @interface DetailViewController ()
 
 @property (nonatomic,strong)UIView *webBrowserView;
-@property (nonatomic,strong)UIImageView *HeadImageView;
+@property (nonatomic,strong)UIView *headView;
+@property (nonatomic,strong)UIImageView *backHeadImageView;
 
 @end
 int a = 0;
@@ -19,6 +20,7 @@ int a = 0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.webView.backgroundColor = [UIColor clearColor];
     [self creatWebView];
     if (self.dataUrl) {
         [self fetchData];
@@ -55,20 +57,21 @@ int a = 0;
 - (void)webViewAddHeadViewWithType:(NSInteger)Type{
     self.webBrowserView = self.webView.scrollView.subviews[0];
     UIView *view = [[UIView alloc]initWithFrame:CGRectZero];
-    self.HeadImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth*2/3.0)];
-    [_HeadImageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrl] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
-    [view addSubview:_HeadImageView];
+    self.backHeadImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenWidth*2/3.0)];
+    [_backHeadImageView sd_setImageWithURL:[NSURL URLWithString:self.imageUrl] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
+    [self.webView insertSubview:_backHeadImageView belowSubview:self.webView.scrollView];
     view.frame = CGRectMake(0, 0, kScreenWidth, kScreenWidth*2/3.0);
     if (Type == 1) {
-        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(10, CGRectGetMaxY(_HeadImageView.frame)+25, 10, kScreenWidth*1/5.0-30)];
+        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(10, 25, 10, kScreenWidth*1/5.0-30)];
         lineView.backgroundColor = [UIColor blackColor];
         [view addSubview:lineView];
-        UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(30, CGRectGetMaxY(_HeadImageView.frame)+10, kScreenWidth-50, kScreenWidth*1/5.0)];
+        UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(30, 10, kScreenWidth-50, kScreenWidth*1/5.0)];
         lable.text = _introduction;
         lable.numberOfLines = 0;
         lable.font = [UIFont boldSystemFontOfSize:24];
         [view addSubview:lable];
-        view.frame = CGRectMake(0, 0, kScreenWidth, CGRectGetMaxY(lable.frame));
+        view.frame = CGRectMake(0, kScreenWidth*2/3.0, kScreenWidth, CGRectGetMaxY(lable.frame));
+        view.backgroundColor = [UIColor whiteColor];
     }
     CGRect frame = self.webBrowserView.frame;
     frame.origin.y = CGRectGetMaxY(view.frame);
@@ -100,7 +103,7 @@ int a = 0;
         NSString *str =[string substringWithRange:NSMakeRange(0, string.length-1)];
         NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
           NSDictionary *dic =  [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        [_HeadImageView sd_setImageWithURL:[NSURL URLWithString:dic[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
+        [_backHeadImageView sd_setImageWithURL:[NSURL URLWithString:dic[@"image"]] placeholderImage:[UIImage imageNamed:@"placeholderImage"]];
         self.title = dic[@"title"];
         return YES;
     }else{
@@ -111,6 +114,22 @@ int a = 0;
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     [self.loadingView removeLoadingView];
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [super scrollViewDidScroll:scrollView];
+    CGPoint offSet = scrollView.contentOffset;
+    CGFloat change = offSet.y;
+    if (offSet.y < 0) {
+//        NSLog(@"%f",self.backHeadImageView.frame.origin.y);
+        CGSize size = CGSizeMake(kScreenWidth-change, kScreenWidth*2/3.f-change);
+        self.backHeadImageView.frame = CGRectMake(0, 0, size.width , size.height);
+        self.backHeadImageView.center = CGPointMake(kScreenWidth/2.f, size.height/2.f);
+    }else{
+        self.backHeadImageView.center = CGPointMake(kScreenWidth/2.f, (kScreenWidth*2/3.f)/2.f-change);
+    }
+    NSLog(@"%f",offSet.y);
+}
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     
     [self.loadingView removeLoadingView];
