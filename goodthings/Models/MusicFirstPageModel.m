@@ -9,13 +9,48 @@
 #import "MusicFirstPageModel.h"
 
 @implementation MusicFirstPageModel
-+ (NSArray*)parseRespondData:(id)respondData{
-    NSMutableArray *array = [NSMutableArray array];
-    for (NSDictionary *dic in respondData) {
-        MusicFirstPageModel *model = [[MusicFirstPageModel alloc]init];
-        [model setValuesForKeysWithDictionary:dic];
-        [array addObject:model];
-    }
-    return array;
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{@"musicianArray":@"musician",
+             @"albumModel":@"album",
+             @"adModelArray":@"ad",
+             @"playListModelArray":@"playlist"
+             };
 }
++ (NSDictionary *)modelContainerPropertyGenericClass{
+    return @{@"musicianArray":[MusicMusicianModel class],
+             @"adModelArray":[MusicAdModel class],
+             @"playListModelArray":[MusicPlayListModel class]
+             };
+}
++ (MusicFirstPageModel*)parseRespondData:(id)respondData{
+    MusicFirstPageModel *model = [MusicFirstPageModel yy_modelWithJSON:respondData];
+    return model;
+}
+@end
+@implementation MusicMusicianModel
++ (NSDictionary *)modelCustomPropertyMapper{
+    return @{
+             @"mdescription":@"description",
+             };
+}
+
+@end
+
+@implementation MusicAlbumModel
+
+
+
+
+@end
+
+@implementation MusicAdModel
+
+
+
+@end
+
+@implementation MusicPlayListModel
+
+
+
 @end

@@ -13,7 +13,7 @@ NSString *const kCachedTime = @"kCachedTime";
 NSString *const kCachedVCName = @"kCachedVCName";
 @interface BeautifulViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (nonatomic)NSMutableArray *dataSourceArray;
-@property (nonatomic)UICollectionView *contentCollectionView;
+
 @property (nonatomic)NSArray *titleArray;
 @property (nonatomic)NSArray *categoryIdArray;
 @property (nonatomic) NSMutableDictionary *viewControllersCaches;/**< 控制器缓存  */

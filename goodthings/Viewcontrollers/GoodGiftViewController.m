@@ -117,7 +117,7 @@
 
 - (void)addLoadingView{
 
-    self.loadingView = [[LGHLoadingView alloc]initWithFrame:CGRectMake(0,0 ,kScreenWidth, kScreenHeight-64-49) loadingViewStyle:RTSpinKitViewStyleWave AnimationViewcolor:kDarkGreenColor backGroundColor:[UIColor whiteColor]];
+    self.loadingView = [[LGHLoadingView alloc]initWithFrame:CGRectMake(0,0 ,kScreenWidth, kScreenHeight-64) loadingViewStyle:RTSpinKitViewStyleWave AnimationViewcolor:kDarkGreenColor backGroundColor:[UIColor whiteColor]];
     [self.view addSubview:self.loadingView];
 
 }

@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface BeautifulViewController : BaseViewController
-
+@property (nonatomic)UICollectionView *contentCollectionView;
 @end

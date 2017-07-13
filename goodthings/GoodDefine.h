@@ -33,7 +33,7 @@
 #define kGiftUrl @"http://api.yizhong.cccwei.com/api.php?srv=2001&cid=335975&uid=0&tms=20151012142734&sig=b86f05f130980515&wssig=83af15d1feb943c6&os_type=3&version=7&city_id=4&since_id=%ld&page_size=20"
 #define kDetailUrl @"http://api.yizhong.cccwei.com/api.php?srv=2002&cid=335975&uid=0&tms=20151013180904&sig=b952237417a0c69e&wssig=a72c752261462d35&os_type=3&version=7&city_id=4&article_id=%ld"
 //好听
-#define kmusicFirstPageUrl @"http://wawa.fm/CmsSite/a/cms/article/myrnew?platform=wwiphone&uid=0"
+#define kmusicFirstPageUrl @"http://wawa.fm:9090/wawa/api.php/index/fmfragment1"
 //好听页最新一期期音乐
 #define kmusicFirstPageUrl2 @"http://wawa.fm/CmsSite/a/cms/magazine/milist?platform=wwandroid&pageNo=1&pageSize=1"
 //往期

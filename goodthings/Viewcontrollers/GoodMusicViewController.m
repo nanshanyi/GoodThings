@@ -27,7 +27,8 @@
 @property (nonatomic) MusicFirstPageModel *model1;
 @property (nonatomic) MusicFirstPageModel *model2;
 @property (nonatomic) MusicFirstPageModel *model3;
-@property (nonatomic) NSMutableArray *dataSourceArray;
+@property (nonatomic) MusicFirstPageModel *firstPageModel;
+@property (nonatomic, strong) NSArray *dataSourceArray;
 
 @end
 
@@ -40,7 +41,10 @@
     [self addRefreshView];
     self.title = @"好听";
     self.contentScrollView.contentSize = CGSizeMake(kScreenWidth, kScreenHeight);
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+//    self.navigationController.navigationBar.backgroundColor = [UIColor blackColor];
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    self.navigationController.navigationBar.translucent  =  YES;
     // Do any additional setup after loading the view from its nib.
 }
 - (void)addRefreshView{
@@ -61,7 +65,7 @@
         id respondData1 = [GoodThingsCacheManager readDataAtUrl:kmusicFirstPageUrl];
         id respondData2 = [GoodThingsCacheManager readDataAtUrl:kmusicFirstPageUrl2];
         
-        self.dataSourceArray = (NSMutableArray*)[MusicFirstPageModel parseRespondData:respondData1];
+        self.firstPageModel = [MusicFirstPageModel parseRespondData:respondData1];
         [self customUI];
         NSDictionary *dic = [respondData2 lastObject];
         self.titleLable.text = dic[@"mname"];
@@ -75,7 +79,7 @@
 - (void)fetchDataFromNet{
     
     [[NetEngine sharedInstance] requestNewsListFrom:kmusicFirstPageUrl success:^(id responsData) {
-       self.dataSourceArray = (NSMutableArray*)[MusicFirstPageModel parseRespondData:responsData];
+       self.firstPageModel = [MusicFirstPageModel parseRespondData:responsData];
         [GoodThingsCacheManager saveData:responsData atUrl:kmusicFirstPageUrl];
         [self customUI];
     } falied:^(NSError *error) {
@@ -96,18 +100,18 @@
 - (void)customUI{
   
     self.model1 = [self.dataSourceArray objectAtIndex:0];
-    self.titleLable1.text = self.model1 .title;
-    [self.musicImageView1 sd_setImageWithURL:[NSURL URLWithString:self.model1 .image]];
+//    self.titleLable1.text = self.model1.title;
+//    [self.musicImageView1 sd_setImageWithURL:[NSURL URLWithString:self.model1 .image]];
     
     
     
     self.model2 = [self.dataSourceArray objectAtIndex:1];
-    [self.musicImageView2 sd_setImageWithURL:[NSURL URLWithString:self.model2.image]];
+//    [self.musicImageView2 sd_setImageWithURL:[NSURL URLWithString:self.model2.image]];
     
 
     
     self.model3 = [self.dataSourceArray objectAtIndex:2];
-    [self.musicImageView3 sd_setImageWithURL:[NSURL URLWithString:self.model3.image]];
+//    [self.musicImageView3 sd_setImageWithURL:[NSURL URLWithString:self.model3.image]];
     
 if (Version >= 9.0){
     if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable)
@@ -134,7 +138,7 @@ if (Version >= 9.0){
     }else{
         MusicArticleViewController *detailVC = [[MusicArticleViewController alloc]init];
         MusicFirstPageModel *model = [self.dataSourceArray objectAtIndex:imageView.tag-kBaseTag];
-        detailVC.musicPageUrl = [NSString stringWithFormat:kMusicDetailUrl,model.id];
+//        detailVC.musicPageUrl = [NSString stringWithFormat:kMusicDetailUrl,model.id];
 //        detailVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 //        [self presentViewController:detailVC animated:YES completion:nil];
         [self.navigationController pushViewController:detailVC animated:YES];
@@ -157,7 +161,7 @@ if (Version >= 9.0){
     }else{
         MusicArticleViewController *detailVC = [[MusicArticleViewController alloc]init];
         MusicFirstPageModel *model = [self.dataSourceArray objectAtIndex:imageView.tag-kBaseTag];
-        detailVC.musicPageUrl = [NSString stringWithFormat:kMusicDetailUrl,model.id];
+//        detailVC.musicPageUrl = [NSString stringWithFormat:kMusicDetailUrl,model.id];
         detailVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         return detailVC;
     }
